@@ -16,14 +16,15 @@ import com.example.demo.Service.UserService;
 
 import jakarta.validation.Valid;
 
-@RestController
-@RequestMapping("/api/user")
+
 @CrossOrigin(
     origins = {
         "http://localhost:4200",
         "https://blog-creator-awmy71zu2-uday-mayannas-projects.vercel.app"
     }
 )
+@RestController
+@RequestMapping("/api/user")
 public class UserController {
 	@Autowired
 	public UserService userService;
