@@ -23,12 +23,12 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(
-    origins = {
-        "http://localhost:4200",
-        "https://blog-creator-awmy71zu2-uday-mayannas-projects.vercel.app"
-    }
-)
+// @CrossOrigin(
+//     origins = {
+//         "http://localhost:4200",
+//         "https://blog-creator-awmy71zu2-uday-mayannas-projects.vercel.app"
+//     }
+// )
 public class CommentController {
 	@Autowired
 	private CommentService commentService;
