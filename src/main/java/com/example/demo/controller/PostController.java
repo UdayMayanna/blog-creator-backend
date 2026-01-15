@@ -27,12 +27,6 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/posts")
-// @CrossOrigin(
-//     origins = {
-//         "http://localhost:4200",
-//         "https://blog-creator-awmy71zu2-uday-mayannas-projects.vercel.app"
-//     }
-// )
 public class PostController {
 	
 	@Autowired
