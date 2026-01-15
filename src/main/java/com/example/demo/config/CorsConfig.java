@@ -18,7 +18,7 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         config.setAllowedOrigins(List.of(
             "http://localhost:4200",
-            "https://blog-creator-ddm1yt5ru-uday-mayannas-projects.vercel.app/"
+            "https://blog-creator-kappa.vercel.app/"
         ));
 
         config.setAllowedHeaders(List.of("*"));
