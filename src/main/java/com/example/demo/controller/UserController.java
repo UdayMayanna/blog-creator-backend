@@ -21,23 +21,28 @@ import jakarta.validation.Valid;
 public class UserController {
 	@Autowired
 	public UserService userService;
-	
-	
+
 	@PostMapping
 	public ResponseEntity<?> saveUser(@Valid @RequestBody User user) {
 		try {
 			return ResponseEntity.ok(userService.saveUser(user));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
-	
+
 	@GetMapping("/{email}/{password}")
-	public ResponseEntity<?> loginUser(@PathVariable("email") String email, @PathVariable("password") String password){
-		try {
-			return ResponseEntity.ok(userService.loginUser(email,password));
-		}catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	public ResponseEntity<User> loginUser(
+			@PathVariable String email,
+			@PathVariable String password) {
+
+		User user = userService.loginUser(email, password);
+
+		if (user == null) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
+
+		return ResponseEntity.ok(user);
 	}
+
 }
